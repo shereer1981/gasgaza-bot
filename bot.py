@@ -1,20 +1,14 @@
+python
 import pandas as pd
 import requests
 from io import BytesIO
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 import os
-from flask import Flask
 
 # رابط الجوجل شيتس
 SHEET_ID = '1--Lcu0S2dSgH81qHNKPpiF9vGeSnqZiZ'
 SHEET_URL = f'https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=xlsx'
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Bot is running!"
 
 def download_file(url):
     response = requests.get(url)
@@ -48,7 +42,7 @@ def search(update: Update, context: CallbackContext) -> None:
         update.message.reply_text('⚠️ حدث خطأ أثناء محاولة الوصول إلى البيانات.')
 
 def main() -> None:
-    TOKEN = os.getenv("7124688280:AAGB4MzzUNc9aYEeeLhnDO7Q5Coa6IQZuwg")
+    TOKEN = "7124688280:AAGB4MzzUNc9aYEeeLhnDO7Q5Coa6IQZuwg"
     updater = Updater(TOKEN, use_context=True)
 
     dispatcher = updater.dispatcher
@@ -61,4 +55,3 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-    app.run(host='0.0.0.0', port=8080)
