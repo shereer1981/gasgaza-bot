@@ -48,7 +48,7 @@ def search(update: Update, context: CallbackContext) -> None:
         update.message.reply_text('⚠️ حدث خطأ أثناء محاولة الوصول إلى البيانات.')
 
 def main() -> None:
-    TOKEN = os.getenv("TELEGRAM_TOKEN")
+    TOKEN = os.getenv("7124688280:AAGB4MzzUNc9aYEeeLhnDO7Q5Coa6IQZuwg")
     updater = Updater(TOKEN, use_context=True)
 
     dispatcher = updater.dispatcher
