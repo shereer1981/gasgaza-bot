@@ -1,0 +1,12 @@
+json
+{
+  "deploy": {
+    "env": "python",
+    "build": {
+      "cmd": "pip install -r requirements.txt"
+    },
+    "start": {
+      "cmd": "gunicorn bot:app"
+    }
+  }
+}
