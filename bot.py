@@ -41,7 +41,7 @@ def search(update: Update, context: CallbackContext) -> None:
         update.message.reply_text('⚠️ حدث خطأ أثناء محاولة الوصول إلى البيانات.')
 
 def main() -> None:
-    TOKEN = "7124688280:AAGB4MzzUNc9aYEeeLhnDO7Q5Coa6IQZuwg"
+    TOKEN = "my_token"
     updater = Updater(TOKEN, use_context=True)
 
     dispatcher = updater.dispatcher
